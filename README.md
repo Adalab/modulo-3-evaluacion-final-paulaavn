@@ -1,3 +1,37 @@
+# Ricky and Morty
+
+Evaluación final del módulo 3 de Adalab.
+
+El ejercicio consiste en desarrollar una página web con React, con un listado de personajes de Rick and Morty, que podemos filtrar por el nombre del personaje.
+
+Partes del ejercicio:
+
+1. Listado de personajes
+   Información sobre los primeros 20 personajes de la serie:
+   Foto
+   Nombre
+   Especie
+
+2. Filtrado de personajes por nombre
+
+3. El listado debe tener los siguientes componentes:
+
+-Componente para el filtro de nombre.
+-Componente para el listado.
+-Componente para la tarjeta de cada personaje del listado.
+-Componente para el detalle de cada personaje.
+
+4. Detalle de personajes
+   Al hacer clic sobre la tarjeta de un personaje, su información aparecerá a pantalla completa con la siguiente información:
+   -Foto
+   -Nombre
+   -Especie
+   -Planeta de origen
+   -Número de episodios en los que aparece.
+   -Si está vivo o muerto.
+
+Paula Albo. Junio 2021.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

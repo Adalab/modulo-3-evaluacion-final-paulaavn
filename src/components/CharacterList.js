@@ -1,11 +1,11 @@
 import React from 'react';
-import User from './User';
+import Character from './Character';
 
 const CharacterList = props =>{
     const userElements = props.users.map(user => {
         return (
             <li key={user.id}>
-                <User user={user}/>
+                <Character user={user}/>
             </li>
         );
     });

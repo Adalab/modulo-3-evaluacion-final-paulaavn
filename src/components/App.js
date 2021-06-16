@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
-import UserList from "./UserList";
 import Filters from "./Filters";
-import UserDetail from "./UserDetail";
+import CharacterDetail from "./CharacterDetail";
 import getApiData from '../services/api';
 import ls from '../services/localStorage';
 import '../stylesheets/App.css';
 
 
 import logo from '../images/logo.png'
+import CharacterList from './CharacterList';
 
 const App = () => {
   const [users, setUsers]= useState(ls.get('users',[]));
@@ -29,6 +29,8 @@ const App = () => {
   const handleFilter = (data) =>{
     if(data.key === "name"){
       setFilterName(data.value);
+    }else{
+      return <h2 className="text_ups_details">Ups! ese personaje no existe...</h2>
     }
   };
 
@@ -43,9 +45,7 @@ const App = () => {
    });
    console.log('Router props', props.match.params.userId, foundUser);
    if (foundUser !== undefined){
-    return <UserDetail user={foundUser}/>;
-   }else{
-     return <p className="not_found_text">Ups! Ese personaje no existe...</p>
+    return <CharacterDetail user={foundUser}/>;
    }
  
  };
@@ -58,7 +58,7 @@ const App = () => {
       <Route exact path="/">
         <div className="container">
           <Filters handleFilter={handleFilter}/>
-          <UserList users={filteredUsers}/>
+          <CharacterList users={filteredUsers}/>
         </div>
       </Route>
       <Route path="/user/:userId" render={renderUserDetail}>

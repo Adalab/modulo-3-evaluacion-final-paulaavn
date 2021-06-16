@@ -1,8 +1,11 @@
+//Creo una función para recoger los datos del Api y la exporto
+
 const getApiData =()=>{
     return (
         fetch('//rickandmortyapi.com/documentation/#get-all-characters')
     .then(response => response.json())
     .then(data=>{
+        //Limpio los datos recogidos
         const cleanData = data.results.map(user=>{
             return{
                 id: user.id,
