@@ -27,6 +27,7 @@
   margin: 10px;
   border-radius: 20px;
   border: 2px solid greenyellow;
+  text-decoration: none;
 }
 .card_img {
   margin-top: 15px;
@@ -57,4 +58,11 @@
   align-items: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 30px;
+}
+
+.preview_card {
+  color: white;
+}
+.not_found_text {
+  color: white;
 }

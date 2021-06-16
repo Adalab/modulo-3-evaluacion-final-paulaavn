@@ -8,7 +8,10 @@ const getApiData =()=>{
                 id: user.id,
                 image: user.image,
                 name: user.name,
-                specie: user.species
+                specie: user.species,
+                planet: user.origin.name,
+                episodes:user.episode.length,
+                status: user.status,
             };
         });
         return cleanData;
