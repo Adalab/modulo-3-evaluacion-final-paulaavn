@@ -1,6 +1,6 @@
 const getApiData =()=>{
     return (
-        fetch('//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json')
+        fetch('//rickandmortyapi.com/documentation/#get-all-characters')
     .then(response => response.json())
     .then(data=>{
         const cleanData = data.results.map(user=>{
@@ -20,3 +20,5 @@ const getApiData =()=>{
 };
 
 export default getApiData;
+
+//('//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json')
