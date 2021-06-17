@@ -1,23 +1,16 @@
 import React from 'react';
+import FilterByName from './FilterByName';
+import FilterBySpecies from './FilterBySpecies';
 
 const Filters = props => {
-    const handleChange = ev => {
-        props.handleFilter({
-            value: ev.target.value,
-            key:"name"
-        });
-    }
+    
     return(
+        <section>
         <form className="form">
-        <label className="form_label" htmlForm="name">Filtrar por nombre:</label>
-        <input 
-        className="form_input-text" 
-        type="text" 
-        name="name" 
-        id="name"
-        onChange={handleChange}
-        />
+            <FilterByName filterName={props.filterName} handleFilter={props.handleFilter}/>
+            <FilterBySpecies filterSpecies={props.filterSpecies} handleFilter={props.handleFilter}/>
         </form>
+        </section>
     );
 };
 

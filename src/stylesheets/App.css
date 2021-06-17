@@ -8,6 +8,7 @@
   background-image: url("../images/background.jpg");
 }
 .main_logo {
+  margin-top: 200px;
   padding: 100px;
   width: 300px;
 }
@@ -16,6 +17,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+
   list-style: none;
 }
 .card {
@@ -52,10 +54,11 @@
 /*Formulario*/
 
 .form {
-  margin-top: -100px;
+  margin-top: 300px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: greenyellow;
   align-items: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -120,4 +123,36 @@
   width: 80px;
   height: 25px;
   border-radius: 10px;
+}
+
+.form_input_select {
+  background-color: darkblue;
+  border: solid 2px greenyellow;
+  border-radius: 10px;
+  color: white;
+  font-weight: 900;
+}
+/* .fa-solid {
+  color: black;
+  width: 50px;
+} */
+
+/* tablet */
+
+@media all and (min-width: 768px) {
+  .form {
+    margin-top: 150px;
+  }
+  .main_logo {
+    width: 400px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .form {
+    margin-top: -60px;
+  }
+  .main_logo {
+    width: 500px;
+  }
 }

@@ -13,8 +13,10 @@ import CharacterList from './CharacterList';
 const App = () => {
   const [users, setUsers]= useState(ls.get('users',[]));
   const [filterName, setFilterName] = useState(ls.get('filterName', ''));
+  const [filterSpecies, setFilterSpecies] = useState(ls.get('filterSpecies', ''));
   
   useEffect(()=>{
+    //Se ejecuta al arrancar la página
     if (users.length === 0) {
       getApiData().then(usersData => {
         setUsers(usersData);
@@ -25,17 +27,32 @@ const App = () => {
   useEffect(() => {
     ls.set('users', users);
   }, [users]);
+  
+  useEffect(() => {
+    ls.set('filterName', filterName);
+  }, [filterName]);
 
   const handleFilter = (data) =>{
     if(data.key === "name"){
       setFilterName(data.value);
-    }else{
-      return <h2 className="text_ups_details">Ups! ese personaje no existe...</h2>
+    }else if (data.key === "species"){
+      setFilterSpecies(data.value);
     }
+    // else{
+    //   return <h2 className="text_ups_details">Ups! ese personaje no existe...</h2>
+    // }
   };
 
- const filteredUsers = users.filter((user) =>{
+ const filteredUsers = users
+ .filter((user) =>{
    return user.name.toLowerCase().includes(filterName.toLowerCase());
+ })
+ .filter(user => {
+   if (filterSpecies === ""){
+     return true;
+   }else{
+   return user.species === filterSpecies;
+   };
  });
 
  const renderUserDetail = (props) => {
@@ -57,8 +74,14 @@ const App = () => {
     <Switch>
       <Route exact path="/">
         <div className="container">
-          <Filters handleFilter={handleFilter}/>
-          <CharacterList users={filteredUsers}/>
+          <Filters 
+          filterName={filterName}
+          filterSpecies={filterSpecies}
+          handleFilter={handleFilter}
+          />
+          <CharacterList 
+          filterName={filterName}
+          users={filteredUsers}/>
         </div>
       </Route>
       <Route path="/user/:userId" render={renderUserDetail}>
