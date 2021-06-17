@@ -2,7 +2,7 @@
 
 const getApiData =()=>{
     return (
-        fetch('//rickandmortyapi.com/documentation/#get-all-characters')
+        fetch('//rickandmortyapi.com/api/character')
     .then(response => response.json())
     .then(data=>{
         //Limpio los datos recogidos
@@ -24,7 +24,7 @@ const getApiData =()=>{
 
 export default getApiData;
 
-//opción 1-('//rickandmortyapi.com/documentation/#get-all-characters')
+//opción 1-('//rickandmortyapi.com/api/character')
 
 //opción 2-('//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json')
 
