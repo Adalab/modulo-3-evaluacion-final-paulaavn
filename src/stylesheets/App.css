@@ -8,15 +8,15 @@
   background-image: url("../images/background.jpg");
 }
 .main_logo {
+  margin-left: 60px;
   margin-top: 200px;
   padding: 100px;
-  width: 300px;
+  width: 150px;
 }
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: 1fr;
 
   list-style: none;
 }
@@ -54,15 +54,19 @@
 /*Formulario*/
 
 .form {
-  margin-top: 300px;
+  margin-top: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   color: greenyellow;
   align-items: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 30px;
+}
+.form_label_specie {
+  margin-top: 10px;
 }
 
 .preview_card {
@@ -126,25 +130,29 @@
 }
 
 .form_input_select {
+  margin-top: 10px;
   background-color: darkblue;
   border: solid 2px greenyellow;
   border-radius: 10px;
   color: white;
   font-weight: 900;
 }
-/* .fa-solid {
-  color: black;
-  width: 50px;
-} */
 
 /* tablet */
 
 @media all and (min-width: 768px) {
   .form {
-    margin-top: 150px;
+    margin-top: 250px;
   }
+
   .main_logo {
     width: 400px;
+  }
+  .cards {
+    height: 130vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
 }
 
@@ -154,5 +162,11 @@
   }
   .main_logo {
     width: 500px;
+  }
+  .cards {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
 }

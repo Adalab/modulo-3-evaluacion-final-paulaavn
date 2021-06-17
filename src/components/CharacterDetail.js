@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserDetail = props => {
-    // const getStatus = () =>{
-    //     if(props.user.status === 'Alive'){
-    //         console.log(props.user.status);
-    //         return 'fa-solid fa-wave-pulse';
-    //     }else if(props.user.status === 'Dead'){
-    //         return 'fa-solid fa-tombstone';
-    //     }else{
-    //         return 'fa-solid fa-circle-question'
-    //     }
-    // };
+    const getStatus = () =>{
+        if(props.user.status === 'Alive'){
+            console.log(props.user.status);
+            return 'far fa-heart';
+        }else if(props.user.status === 'Dead'){
+            return 'fas fa-skull-crossbones';
+        }else{
+            return 'fas fa-question'
+        }
+    };
  
     return (
         <div className="preview_card">
@@ -27,8 +27,7 @@ const UserDetail = props => {
                 <li>Specie: {props.user.specie}</li>
                 <li>Home planet: {props.user.planet}</li>
                 <li>Númber of episodes: {props.user.episodes}</li>
-                <li>Status: {props.user.status}
-                {/* <i class={getStatus()}></i> */}
+                <li>Status:    <i className={getStatus()}></i>
                 </li>
                 </ul>
                 </section>
@@ -39,6 +38,10 @@ const UserDetail = props => {
 };
 export default UserDetail;
 
-// icono muerto <i class="fa-solid fa-tombstone"></i>
-//icono vivo <i class="fa-solid fa-wave-pulse"></i>
-// icono pregunta <i class="fa-solid fa-circle-question"></i>
+
+
+//muertos<i class="fas fa-skull-crossbones"></i>
+
+//vivos <i class="far fa-heart"></i>
+
+//question <i class="fas fa-question"></i>

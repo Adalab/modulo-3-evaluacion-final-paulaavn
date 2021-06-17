@@ -18,8 +18,8 @@ const FilterBySpecies = props => {
             value={props.filterSpecies}
             onChange={handleChange}>
                 <option value="">Todas</option>
-                <option value="human">Human</option>
-                <option value="alien">Alien</option>
+                <option value="Human">Human</option>
+                <option value="Alien">Alien</option>
             </select>
 
         </>

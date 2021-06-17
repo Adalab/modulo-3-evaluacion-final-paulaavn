@@ -37,10 +37,9 @@ const App = () => {
       setFilterName(data.value);
     }else if (data.key === "species"){
       setFilterSpecies(data.value);
+    }else{
+      return <h2 className="text_ups_details">Ups! ese personaje no existe...</h2>
     }
-    // else{
-    //   return <h2 className="text_ups_details">Ups! ese personaje no existe...</h2>
-    // }
   };
 
  const filteredUsers = users
@@ -49,9 +48,10 @@ const App = () => {
  })
  .filter(user => {
    if (filterSpecies === ""){
+     
      return true;
    }else{
-   return user.species === filterSpecies;
+   return user.specie === filterSpecies;
    };
  });
 
@@ -81,6 +81,7 @@ const App = () => {
           />
           <CharacterList 
           filterName={filterName}
+          filterSpecies={filterSpecies}
           users={filteredUsers}/>
         </div>
       </Route>
